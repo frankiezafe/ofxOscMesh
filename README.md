@@ -3,7 +3,9 @@ ofxOscMesh
 
 Openframeworks addons for mesh network.
 
-Deploy in [of]/addons/ofxOscMesh
+Deploy in [of]/addons/ofxOscMesh.
+
+See [iterations 2016](https://gitlab.com/frankiezafe/iterations2016/) for a complete project description. This addon has been done to broadcast tags seen with [ofxARtoolKitPlus](https://github.com/fishkingsin/ofxARtoolkitPlus).
 
 Communication protocol
 ======================
