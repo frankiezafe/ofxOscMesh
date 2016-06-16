@@ -22,6 +22,7 @@ public:
     static Config * get();
     
     std::string name;
+    std::string names_filter;
     bool verbose;
     bool enable_osc;
     int broadcast_port;

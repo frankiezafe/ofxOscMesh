@@ -25,6 +25,7 @@ Config * Config::get() {
 Config::Config( ) {
     
     name = "undefined";
+	names_filter = "";
     verbose = false;
     enable_osc = true;
     broadcast_port = 20000;
