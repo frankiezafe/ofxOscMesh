@@ -103,10 +103,10 @@ By default, the producer are not sending information to other points.
 Once the communication enabled, the producer is creating custom messages for each consumer, using this format:
 
 + address: */d*
-+ arg[0]: *string* - name of the producer
-+ arg[1]: *int* - tag ID
-+ arg[2]: *int* - event type, [0,1,2] - [first apparition, presence, disparition]
-+ arg[3]: *int* - datakind, describing the meaning of the following arguments
++ arg[0]: *int* - datakind, describing the meaning of the following arguments
++ arg[1]: *string* - name of the producer
++ arg[2]: *int* - tag ID
++ arg[3]: *int* - event type, [0,1,2] - [first apparition, presence, disparition]
 + arg[3+]: data
   + if xy enabled, adding 2 floats
   + if xyz enabled, adding 3 floats
