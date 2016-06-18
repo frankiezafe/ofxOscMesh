@@ -369,15 +369,22 @@ DataSender * OSCAgent::createSender( string unique,string bip, int bport, DataKi
 
 void OSCAgent::send( DataSet & set ) {
     for ( map< string, DataSender * >::iterator its = senders.begin(); its != senders.end(); ++its ) {
-        if ( its->second->request.i == 0 ) {
+        if ( its->second->request.i == 0 || 
+		(
+			!its->second->request[0] &&
+			!its->second->request[1] &&
+			!its->second->request[2] &&
+			!its->second->request[3]
+		) ) {
+			// can't deliver any information to this agent...
             continue;
         }
         ofxOscMessage msg;
         msg.setAddress( OSC_ADDRESS_DATA );
+        msg.addIntArg( its->second->request.i );
         msg.addStringArg( Config::get()->name );
         msg.addIntArg( set.tagid );
         msg.addIntArg( (int) set.event );
-        msg.addIntArg( its->second->request.i );
         if ( its->second->request[ 0 ] ) {
             msg.addFloatArg( set.xyz.x );
             msg.addFloatArg( set.xyz.y );
